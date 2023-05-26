@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class) // 스프링이랑 같이 엮어서 실행
 @SpringBootTest
-@Transactional 
+@Transactional
 class MemberServiceTest {
 
     @Autowired MemberService memberService;
@@ -39,8 +39,8 @@ class MemberServiceTest {
         Long saveId = memberService.join(member);
 
         //then
-        em.flush();
-        assertEquals(member, memberRepository.find(saveId));
+        em.flush(); // flush
+        assertEquals(member, memberRepository.findOne(saveId));
     }
 
     @Test
