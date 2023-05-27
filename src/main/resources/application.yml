@@ -4,6 +4,11 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
+  devtools:
+    livereload:
+      enabled: true     # livereload 사용시 활성화
+    restart:
+      enabled: false
 
   jpa:
     hibernate:
