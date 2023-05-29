@@ -27,4 +27,10 @@ public class ItemService {
     public List<Item> findItems(){
         return itemRepository.findAll();
     }
+
+    @Transactional
+    public void updateItem(UpdateItemDto itemDto){ // 영속상태의 값을 변경하므로 저장하는 메소드를 사용하지 않아도 된다.
+        Item findItem = itemRepository.findOne(itemDto.getId());
+        findItem.change(itemDto.getName(), itemDto.getPrice(), itemDto.getStockQuantity());
+    }
 }
