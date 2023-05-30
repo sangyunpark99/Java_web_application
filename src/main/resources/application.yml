@@ -21,4 +21,3 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug  # logger를 통해서 출력
-    org.hibernate.type: trace
