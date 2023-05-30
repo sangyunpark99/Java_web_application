@@ -1,12 +1,12 @@
 package jpabook.jpashop.service;
 
 import jakarta.persistence.EntityManager;
-import jpabook.jpashop.domain.Address;
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderStatus;
-import jpabook.jpashop.domain.item.Book;
-import jpabook.jpashop.domain.item.Item;
+import jpabook.jpashop.controller.domain.Address;
+import jpabook.jpashop.controller.domain.Member;
+import jpabook.jpashop.controller.domain.Order;
+import jpabook.jpashop.controller.domain.OrderStatus;
+import jpabook.jpashop.controller.domain.item.Book;
+import jpabook.jpashop.controller.domain.item.Item;
 import jpabook.jpashop.exception.NotEnoughtStockException;
 import jpabook.jpashop.repository.OrderRepository;
 import org.junit.jupiter.api.Test;

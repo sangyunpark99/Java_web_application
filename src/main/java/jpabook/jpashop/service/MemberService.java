@@ -1,6 +1,6 @@
 package jpabook.jpashop.service;
 
-import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.controller.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ public class MemberService {
         return member.getId();
     }
 
-    private void validateDuplicateMember(Member member) {
+    private void validateDuplicateMember(Member member) { // 계정이 존재하는지 유무
         // Exception
         List<Member> findMembers = memberRepository.findByName(member.getName());
         if(findMembers.size() > 0){
@@ -40,5 +40,11 @@ public class MemberService {
     // 회원 한건 조회
     public Member findOne(Long id){
         return memberRepository.findOne(id);
+    }
+
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name); // 더티체크로 상태 업데이트
     }
 }

@@ -3,7 +3,7 @@ package jpabook.jpashop.repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
-import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.controller.domain.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
@@ -27,8 +27,6 @@ public class OrderRepository {
     public List<Order> findAll(OrderSearch orderSearch){
 
         // 동적 쿼리
-
-
         return em.createQuery("select o from Order o join o.member m" + "Where o.status = :status" + "and m.name like :name", Order.class)
                 .setParameter("status", orderSearch.getOrderStatus())
                 .setParameter("name", orderSearch.getMemberName())
@@ -38,7 +36,7 @@ public class OrderRepository {
 
     /*
     * JPA Criteria*/
-    public List<Order> findAllByCriteria(OrderSearch orderSearch){
+    public List<Order> findAllByCriteria(OrderSearch orderSearch){ // 동적 쿼리
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Order> cq = cb.createQuery(Order.class);
         Root<Order> o = cq.from(Order.class);

@@ -1,7 +1,7 @@
 package jpabook.jpashop.service;
 
 import jakarta.persistence.EntityManager;
-import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.controller.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

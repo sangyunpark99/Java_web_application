@@ -1,7 +1,7 @@
-package jpabook.jpashop.domain.item;
+package jpabook.jpashop.controller.domain.item;
 
 import jakarta.persistence.*;
-import jpabook.jpashop.domain.Category;
+import jpabook.jpashop.controller.domain.Category;
 import jpabook.jpashop.exception.NotEnoughtStockException;
 import lombok.Getter;
 import lombok.Setter;
